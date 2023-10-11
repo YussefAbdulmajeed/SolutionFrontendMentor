@@ -1,0 +1,681 @@
+/* normalization */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Barlow', sans-serif;
+}
+/* end normalization*/
+
+/* start variable */
+:root {
+    --mainPadding: 200px;
+    --colorHTML: rgb(106, 190, 205);
+    --colorCSS: rgb(62, 84, 163);
+    --colorJS: rgb(207, 99, 144);
+    --colorAPI: rgb(170, 215, 66);
+    --colorL1: rgb(106, 190, 205);
+    --colorL2: rgb(170, 215, 66);
+    --colorL3: rgb(241, 182, 4);
+    --colorL4: rgb(244, 137, 37);
+
+}
+/* end variable */
+
+
+
+/* start header style */
+header {
+    width: 100%;
+    padding: 12px var(--mainPadding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+header img {
+    width: 196px;
+    height: 28px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #000fa7;
+    border-bottom: 2px solid transparent;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #601cfc;
+    border-bottom: 2px solid #601cfc;
+}
+/* end header style */
+
+/* start main section style */
+main{
+    padding: 0px var(--mainPadding);
+}
+section {
+    padding: 100px var(--mainPadding);
+}
+
+main {
+    height: calc(100vh - 52px);
+    width: 100%;
+    background-image: linear-gradient(to right, #01022de5 40%,#00000088) ,url(images/pexels-fauxels-3184306.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+main h4 {
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+main h1 {
+    font-size: 3em;
+    font-weight: 600;
+    color: #4e9eff;
+    margin-top: 10px;
+}
+
+main h3 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 10px 0px 30px 0px;
+}
+
+main a {
+    text-decoration: none;
+    width: fit-content;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.6375em 1.5875em;
+    border-radius: 15px;
+    background-color: #000fa7;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    transition: all 1s 0s ;
+}
+
+main a:hover {
+    background-color: #0038d3;
+    transform: scale(1.1);
+}
+/* end main section style */
+
+/* start HTML&CSS section style */
+section.html {
+    background-color: rgba(255, 255, 255, 0.855);
+}
+/* emd HTML&CSS section style */
+
+/* start JS section style */
+section.js {
+    background-color: rgba(50, 50, 50);
+}
+/* end JS section style */
+
+/* start API section style */
+section.api {
+    background-color: rgba(255, 255, 255, 0.855);
+}
+/* end HTML&CSS section style */
+
+
+
+
+/* start common parts in sections {HTML&CSS, JS, API} */
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.title {
+    color: #3a6cf4;
+    letter-spacing: 2.5px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.challenge {
+    width: 21em;
+    min-height: 14em;
+    background-color: white;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 2px 15px 0 rgba(1 1 1 / 30%);
+    transition: all 0.5s;
+}
+
+.challenge:hover {
+    transform: scale(1.1);
+}
+
+.challenge:hover .info .text .newbie::before {
+    top: -2px;
+    transition: 0s;
+}
+
+.imag  img {
+    width: 100%;
+    height: 12em; 
+    border-radius: 9px 9px 0 0px;
+}
+
+.info {
+    padding: 1em;
+}
+
+.info p.name {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.info .text,
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info .text p.challenge-category {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;    
+}
+
+.info .text p.challenge-category .category1 {
+    color: var(--colorHTML);
+    margin-left: 5px;
+}
+
+.info .text p.challenge-category .category2{
+    color: var(--colorCSS);
+    margin-left: 5px;
+}
+
+.info .text p.challenge-category .category3{
+    color: var(--colorJS);
+    margin-left: 5px;
+}
+
+.info .text p.challenge-category .category4{
+    color: var(--colorAPI);
+    margin-left: 3.5px;
+}
+
+.info .text .level {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+    border-radius: 0 5px 5px 0;
+    padding: 0px 5px;
+    height: 20px;
+    position: relative;
+}
+
+.info .text .newbie {
+    color: var(--colorL1);
+    border: 2px solid var(--colorL1);
+}
+
+.info .text .junior {
+    color: var(--colorL2);
+    border: 2px solid var(--colorL2);
+}
+.info .text .intermediate {
+    color: var(--colorL3);
+    border: 2px solid var(--colorL3);
+}
+
+.info .text .advanced {
+    color: var(--colorL4);
+    border: 2px solid var(--colorL4);
+}
+
+.info .text .newbie::before {
+    content: "1";
+    position: absolute;
+    color: white;
+    background-color: var(--colorL1);
+    border: 2px solid var(--colorL1);
+    font-size: 0.95em;
+    font-weight: 600;
+    border-radius: 5px 0 0 5px;
+    width: 20px;
+    height: 100%;
+    left: -21px;
+    top: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .text .newbie::before,
+.info .text .junior::before,
+.info .text .intermediate::before,
+.info .text .advanced::before{
+    position: absolute;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 900;
+    border-radius: 5px 0 0 5px;
+    width: 20px;
+    height: 100%;
+    left: -21px;
+    top: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .text .newbie::before {
+    content: "1";
+    background-color: var(--colorL1);
+    border: 2px solid var(--colorL1);
+}
+
+.info .text .junior::before {
+    content: "2";
+    background-color: var(--colorL2);
+    border: 2px solid var(--colorL2);
+}
+
+.info .text .intermediate::before {
+    content: "3";
+    background-color: var(--colorL3);
+    border: 2px solid var(--colorL3);
+}
+
+.info .text .advanced::before {
+    content: "4";
+    background-color: var(--colorL4);
+    border: 2px solid var(--colorL4);
+}
+
+.btns {
+    margin: 15px 1em;
+}
+
+.btns a {
+    text-decoration: none;
+    color: white;
+    border: 3px solid transparent;
+    font-weight: 500;
+    padding: 5.5px 20px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.btns a:first-child {
+    background-color: #000fa7;
+}
+
+.btns a:first-child:hover {
+    color: #000fa7;
+    border: 3px solid #000fa7;
+    background-color: white;
+}
+
+.btns a:last-child {
+    background-color: #920000;
+}
+
+.btns a:last-child:hover {
+    color: #920000;
+    border: 3px solid #920000;
+    background-color: white;
+}
+/* end common parts in sections {HTML&CSS, JS, API} */
+
+/* JS section */
+.js .info .text .newbie::before,
+.js .info .text .junior::before,
+.js .info .text .intermediate::before,
+.js .info .text .advanced::before {
+    top: -2px;
+}
+
+/* API section */
+.api .info .text .newbie::before,
+.api .info .text .junior::before,
+.api .info .text .intermediate::before,
+.api .info .text .advanced::before {
+    top: -2px;
+}
+
+
+/* footer style */
+footer {
+    background-color: #000016;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    color: white;
+}
+
+footer p span,
+footer p {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+footer p span {
+    color: #3a6cf4;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.7em;
+    padding-right: 30px;
+    transition: 0.9 ease;
+    padding: 5px;
+
+}
+
+.social-icons a:hover {
+    font-size: 2em;
+    color: #0038d3;
+}
+
+
+/* responsive */
+/* large view */
+
+@media (min-width: 1024px) and  (max-width: 1280px) {
+    main {
+        padding: 0px 50px;
+    }
+    section {
+        padding: 100px 50px;
+    }
+    header {
+        padding: 12px 50px;
+    }
+    .challenge {
+        width: 18em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+@media (max-width: 1023px) {
+    main{
+        padding: 0px 50px;
+        background-image: linear-gradient(to right, #01022dd4 40%,#01022da6) ,url(images/pexels-fauxels-3184306.jpg);
+    }
+    section {
+        padding: 80px 20px;
+    }
+    header {
+        padding: 20px 50px;
+    }
+    header img {
+        width: 156px;
+        height: 28px;
+    }
+    nav a {
+        margin-left: 25px;
+    }
+    /* main style */
+    .main h3 {
+        font-size: 1.5em;
+    }
+    .title {
+        font-size: 1.8em;
+    }
+    /* content of challenges */
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .challenge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (width: 780px) {
+    .challenge {
+        width: 20em;
+    }
+}
+
+/* mediam view */
+@media (min-width: 450px) and (max-width: 600px) {
+    main{
+        padding: 0px 50px;
+        background-image: linear-gradient(to right, #01022dd4 40%,#01022da6) ,url(images/pexels-fauxels-3184306.jpg);
+    }
+    section {
+        padding: 80px 20px;
+    }
+    header {
+        padding: 10px 50px;
+    }
+    header img {
+        width: 130px;
+        height: 28px;
+    }
+    nav a {
+        margin-left: 15px;
+        font-size: 0.9em;
+    }
+    main h4 {
+        font-size: 1.2em;
+    }
+    main h1 {
+        font-size: 2.2em;
+    }
+    main h3 {
+        font-size: 1.3em;
+    }
+    main a {
+        font-size: 0.8em;
+    }
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .challenge {
+        width: 22em;
+    }
+    .info p.name {
+        font-size: 1.4em;
+    }
+    .info .text p.challenge-category {
+        font-size: 1em;
+    }
+    .info .text .level {
+        font-size: 0.9em;
+    }
+    .js .info .text .newbie::before, 
+    .js .info .text .junior::before, 
+    .js .info .text .intermediate::before, 
+    .js .info .text .advanced::before,
+    .api .info .text .newbie::before, 
+    .api .info .text .junior::before, 
+    .api .info .text .intermediate::before, 
+    .api .info .text .advanced::before {
+        top: -2px;
+    }
+    .social-icons {
+        font-size: .8em;
+    }
+    .social-icons a:hover {
+        font-size: 1.2em;
+        color: #0038d3;
+    }
+}
+
+@media (width: 540px) {
+    .challenge {
+        width: 22em;
+    }
+    .info p.name {
+        font-size: 1.4em;
+    }
+    .info .text p.challenge-category {
+        font-size: 1em;
+    }
+    .info .text .level {
+        font-size: 0.9em;
+    }    
+}
+
+
+@media (max-width: 449px) {
+    main{
+        padding: 0px 20px;
+        background-image: linear-gradient(to right, #01022dd4 40%,#01022da6) ,url(images/pexels-fauxels-3184306.jpg);
+    }
+    section {
+        padding: 80px 20px;
+    }
+    header {
+        padding: 13px 20px;
+    }
+    header img {
+        width: 100px;
+        height: 28px;
+    }
+    nav a {
+        margin-left: 10px;
+        font-size: 0.8em;
+    }
+    main h4 {
+        font-size: 0.9em;
+    }
+    main h1 {
+        font-size: 1.7em;
+    }
+    main h3 {
+        font-size: 1em;
+    }
+    main a {
+        font-size: 0.7em;
+    }
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .challenge {
+        width: 18em;
+    }
+    .info p.name {
+        font-size: 1.1em;
+    }
+    .info .text p.challenge-category {
+        font-size: 1em;
+    }
+    .info .text .level {
+        font-size: 0.9em;
+    }
+    .html .info .text .newbie::before, 
+    .html .info .text .junior::before, 
+    .html .info .text .intermediate::before, 
+    .html .info .text .advanced::before {
+        top: -2px;
+    }
+
+    .api .info .text .newbie::before, 
+    .api .info .text .junior::before, 
+    .api .info .text .intermediate::before, 
+    .api .info .text .advanced::before {
+        top: -1px;
+    }
+
+    .js .info .text .newbie::before, 
+    .js .info .text .junior::before, 
+    .js .info .text .intermediate::before, 
+    .js .info .text .advanced::before {
+        top: -1.5px;
+
+    }
+    footer {
+        padding: 23px;
+        height: 45px;
+    }
+    footer p span,
+    footer p {
+    font-weight: 600;
+    font-size: 0.8em;
+    }
+    .social-icons a {
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 300px) {
+    section {
+        padding: 80px 10px;
+    }
+    header img {
+        width: 92px;
+        height: 28px;
+    }
+    nav a {
+        margin-left: 7px;
+        font-size: 0.6em;
+    }
+    .challenge {
+        width: 16em;
+    }
+    .info p.name {
+        font-size: 1em;
+    }
+    .info .text p.challenge-category {
+        font-size: 0.9em;
+    }
+    .info .text .level {
+        font-size: 0.7em;
+    }
+    .info .text p.challenge-category .category1 {
+        margin-left: 3px;
+    }
+    .info .text p.challenge-category .category2 {
+        margin-left: 3px;
+    }
+    .info .text p.challenge-category .category3 {
+        margin-left: 3px;
+    }
+    .info .text p.challenge-category .category4 {
+        margin-left: 3px;
+    }
+    footer p span,
+    footer p {
+    font-weight: 600;
+    font-size: 0.7em;
+    }
+    .social-icons a {
+        font-size: 0.8em;
+    }
+
+    .challenge:hover {
+        transform: scale(1);
+    }
+}
+
+
